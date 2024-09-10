@@ -35,38 +35,39 @@ class _AgePickerState extends State<AgePicker> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-        scrollDirection: Axis.horizontal,
-        controller: agePickerController,
-        itemCount: 80,
-        itemBuilder: (context, index) {
-          bool isActive = _selectedAge == index;
-          bool isNextLeftClose = index - _selectedAge == -1;
-          bool isNextRightClose = index - _selectedAge == 1;
-          bool isNextNextLeftClose = index - _selectedAge == -2;
-          bool isNextNextRightClose = index - _selectedAge == 2;
-          var text = Text("${index + 1}");
-          return Align(
-            alignment: Alignment.center,
-            child: isActive
-                ? AgeIndicator(age: index + 1)
-                : Text(
-                    '${text.data}',
-                    style: TextStyle(
-                      color: Colors.white.withOpacity(
-                        isNextLeftClose || isNextRightClose
-                            ? 0.8
-                            : isNextNextLeftClose || isNextNextRightClose
-                                ? .5
-                                : .3,
-                      ),
-                      fontSize: isNextLeftClose || isNextRightClose
-                          ? 24
+      scrollDirection: Axis.horizontal,
+      controller: agePickerController,
+      itemCount: 80,
+      itemBuilder: (context, index) {
+        bool isActive = _selectedAge == index;
+        bool isNextLeftClose = index - _selectedAge == -1;
+        bool isNextRightClose = index - _selectedAge == 1;
+        bool isNextNextLeftClose = index - _selectedAge == -2;
+        bool isNextNextRightClose = index - _selectedAge == 2;
+        var text = Text("${index + 1}");
+        return Align(
+          alignment: Alignment.center,
+          child: isActive
+              ? AgeIndicator(age: index + 1)
+              : Text(
+                  '${text.data}',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(
+                      isNextLeftClose || isNextRightClose
+                          ? 0.8
                           : isNextNextLeftClose || isNextNextRightClose
-                              ? 16
-                              : 14,
+                              ? .5
+                              : .3,
                     ),
+                    fontSize: isNextLeftClose || isNextRightClose
+                        ? 24
+                        : isNextNextLeftClose || isNextNextRightClose
+                            ? 16
+                            : 14,
                   ),
-          );
-        });
+                ),
+        );
+      },
+    );
   }
 }

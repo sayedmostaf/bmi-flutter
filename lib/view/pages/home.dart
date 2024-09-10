@@ -1,5 +1,4 @@
 import 'package:bmi/constants.dart';
-import 'package:bmi/view/widgets/age_indicator.dart';
 import 'package:bmi/view/widgets/age_picker.dart';
 import 'package:bmi/view/widgets/gender_selection_tile.dart';
 import 'package:flutter/material.dart';
@@ -25,12 +24,12 @@ class _HomePageState extends State<HomePage> {
           style: const TextStyle(color: Colors.white),
         ),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Row(
+            Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -38,10 +37,10 @@ class _HomePageState extends State<HomePage> {
                 GenderSelectionTile(gender: 'Female'),
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 45,
             ),
-            const SizedBox(
+            SizedBox(
               height: 100,
               child: AgePicker(),
             ),
