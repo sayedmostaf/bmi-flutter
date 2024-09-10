@@ -15,8 +15,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    List<int> ages = List<int>.generate(80, (index) => index);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: swatch,
@@ -35,8 +33,16 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                GenderSelectionTile(gender: 'Male'),
-                GenderSelectionTile(gender: 'Female'),
+                GenderSelectionTile(
+                  gender: 'Male',
+                  image: 'male.gif',
+                  color: blue,
+                ),
+                GenderSelectionTile(
+                  gender: 'Female',
+                  image: 'female.gif',
+                  color: pink,
+                ),
               ],
             ),
             SizedBox(

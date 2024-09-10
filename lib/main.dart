@@ -20,6 +20,7 @@ class BMI extends StatelessWidget {
         scaffoldBackgroundColor: swatch,
         appBarTheme: const AppBarTheme(
           elevation: 0,
+          toolbarHeight: 100,
           centerTitle: true,
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: swatch,

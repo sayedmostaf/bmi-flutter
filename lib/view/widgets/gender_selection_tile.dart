@@ -3,8 +3,14 @@ import 'package:bmi/view/widgets/curve.dart';
 import 'package:flutter/material.dart';
 
 class GenderSelectionTile extends StatelessWidget {
-  const GenderSelectionTile({super.key, required this.gender});
+  const GenderSelectionTile(
+      {super.key,
+      required this.gender,
+      required this.image,
+      this.color = darkBlue});
   final String gender;
+  final String image;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -20,9 +26,10 @@ class GenderSelectionTile extends StatelessWidget {
               width: size.width * 0.4,
               decoration: BoxDecoration(
                 border: Border.all(color: grey),
-                color: darkBlue,
+                color: color,
                 borderRadius: BorderRadius.circular(8),
               ),
+              child: Image.asset('assets/$image'),
             ),
           ),
         ),

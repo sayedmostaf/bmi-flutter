@@ -3,11 +3,12 @@ import 'package:bmi/view/widgets/curve.dart';
 import 'package:flutter/material.dart';
 
 class CurvedButton extends StatelessWidget {
-  const CurvedButton({super.key});
-
+  const CurvedButton({super.key, this.onPressed});
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onPressed,
       child: ClipPath(
         clipper: CustomCurvePath(),
         child: Container(
