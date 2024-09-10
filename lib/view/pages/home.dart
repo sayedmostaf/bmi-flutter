@@ -1,5 +1,6 @@
 import 'package:bmi/constants.dart';
 import 'package:bmi/view/widgets/age_picker.dart';
+import 'package:bmi/view/widgets/curved_button.dart';
 import 'package:bmi/view/widgets/gender_selection_tile.dart';
 import 'package:bmi/view/widgets/weight_picker.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +50,10 @@ class _HomePageState extends State<HomePage> {
               height: 24,
             ),
             WeightPicker(),
+            SizedBox(
+              height: 2,
+            ),
+            CurvedButton(),
           ],
         ),
       ),
