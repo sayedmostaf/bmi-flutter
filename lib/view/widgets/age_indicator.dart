@@ -9,15 +9,17 @@ class AgeIndicator extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 50,
-          width: 50,
-          alignment: Alignment.topCenter,
+          height: 60,
+          width: 55,
+          // alignment: Alignment.topCenter,
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
               color: primary, borderRadius: BorderRadius.circular(8)),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
+                width: 25,
                 height: 5,
                 decoration: BoxDecoration(
                     color: darkBlue, borderRadius: BorderRadius.circular(10)),

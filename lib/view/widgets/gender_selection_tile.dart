@@ -1,5 +1,5 @@
 import 'package:bmi/constants.dart';
-import 'package:bmi/view/customs/curve.dart';
+import 'package:bmi/view/widgets/curve.dart';
 import 'package:flutter/material.dart';
 
 class GenderSelectionTile extends StatelessWidget {
