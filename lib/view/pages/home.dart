@@ -1,7 +1,8 @@
 import 'package:bmi/constants.dart';
+import 'package:bmi/view/pages/height.dart';
 import 'package:bmi/view/widgets/age_picker.dart';
 import 'package:bmi/view/widgets/curved_button.dart';
-import 'package:bmi/view/widgets/gender_selection_tile.dart';
+import 'package:bmi/view/widgets/gender_picker.dart';
 import 'package:bmi/view/widgets/weight_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -18,48 +19,40 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: swatch,
-        toolbarHeight: 100,
+        toolbarHeight: 80,
         title: Text(
           widget.title,
           style: const TextStyle(color: Colors.white),
         ),
       ),
-      body: const SafeArea(
+      body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                GenderSelectionTile(
-                  gender: 'Male',
-                  image: 'male.gif',
-                  color: blue,
-                ),
-                GenderSelectionTile(
-                  gender: 'Female',
-                  image: 'female.gif',
-                  color: pink,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            SizedBox(
+            const GenderPicker(),
+            const SizedBox(
               height: 100,
               child: AgePicker(),
             ),
-            SizedBox(
-              height: 24,
+            const SizedBox(
+              height: 18,
             ),
-            WeightPicker(),
-            SizedBox(
-              height: 2,
+            const WeightPicker(),
+            const SizedBox(
+              height: 20,
             ),
-            CurvedButton(),
+            CurvedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: ((context) {
+                  return const HeightPage();
+                })));
+              },
+            ),
+            const SizedBox(
+              height: 30,
+            ),
           ],
         ),
       ),

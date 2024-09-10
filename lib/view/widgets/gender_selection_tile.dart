@@ -1,4 +1,5 @@
 import 'package:bmi/constants.dart';
+import 'package:bmi/data/models/gender.dart';
 import 'package:bmi/view/widgets/curve.dart';
 import 'package:flutter/material.dart';
 
@@ -6,45 +7,65 @@ class GenderSelectionTile extends StatelessWidget {
   const GenderSelectionTile(
       {super.key,
       required this.gender,
-      required this.image,
-      this.color = darkBlue});
-  final String gender;
-  final String image;
-  final Color? color;
+      required this.onPressed,
+      this.isSelected = false});
+  final Gender gender;
+  final bool? isSelected;
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        ClipPath(
-          clipper: CustomCurvePath(),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Container(
-              height: size.height * 0.14,
-              width: size.width * 0.4,
-              decoration: BoxDecoration(
-                border: Border.all(color: grey),
-                color: color,
-                borderRadius: BorderRadius.circular(8),
+    return GestureDetector(
+      onTap: onPressed,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ClipPath(
+            clipper: CustomCurvePath(),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Container(
+                height: isSelected! ? size.height * .16 : size.height * 0.14,
+                width: isSelected! ? size.width * .45 : size.width * 0.4,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: isSelected! ? Colors.white : grey,
+                  ),
+                  color: gender.color,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: [
+                    Image.asset('assets/${gender.image}'),
+                    isSelected!
+                        ? const Positioned(
+                            top: 5,
+                            right: 5,
+                            child: Icon(
+                              Icons.check_box_sharp,
+                              color: primary,
+                            ),
+                          )
+                        : Container(),
+                  ],
+                ),
               ),
-              child: Image.asset('assets/$image'),
             ),
           ),
-        ),
-        const SizedBox(
-          height: 18,
-        ),
-        Text(
-          gender,
-          style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.normal,
-            fontSize: 16,
+          const SizedBox(
+            height: 18,
           ),
-        )
-      ],
+          Text(
+            gender.gender!,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: isSelected! ? FontWeight.bold : FontWeight.normal,
+              fontSize: 16,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
