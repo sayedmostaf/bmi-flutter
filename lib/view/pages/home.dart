@@ -1,6 +1,7 @@
 import 'package:bmi/constants.dart';
 import 'package:bmi/view/widgets/age_picker.dart';
 import 'package:bmi/view/widgets/gender_selection_tile.dart';
+import 'package:bmi/view/widgets/weight_picker.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,12 +39,16 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(
-              height: 45,
+              height: 25,
             ),
             SizedBox(
               height: 100,
               child: AgePicker(),
             ),
+            SizedBox(
+              height: 24,
+            ),
+            WeightPicker(),
           ],
         ),
       ),
