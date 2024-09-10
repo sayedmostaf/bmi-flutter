@@ -1,3 +1,4 @@
+import 'package:bmi/constants.dart';
 import 'package:bmi/view/widgets/curved_button.dart';
 import 'package:flutter/material.dart';
 
@@ -50,6 +51,8 @@ class _HeightPageState extends State<HeightPage> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: swatch,
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +69,10 @@ class _HeightPageState extends State<HeightPage> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.help),
+            icon: const Icon(
+              Icons.help,
+              color: Colors.white,
+            ),
             tooltip: "Get Help",
           )
         ],
