@@ -1,4 +1,4 @@
-import 'package:bmi/constants.dart';
+import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/view/pages/height.dart';
 import 'package:bmi/view/widgets/age_picker.dart';
 import 'package:bmi/view/widgets/curved_button.dart';

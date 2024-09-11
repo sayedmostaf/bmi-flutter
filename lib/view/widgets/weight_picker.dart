@@ -1,7 +1,7 @@
 import 'package:bmi/view/widgets/pentagon.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../theme/colors.dart';
 
 class WeightPicker extends StatefulWidget {
   const WeightPicker({super.key});
@@ -80,6 +80,7 @@ class _WeightPickerState extends State<WeightPicker> {
                       child: Text(
                         "${text.data}",
                         style: TextStyle(
+                            fontWeight: isActive ? FontWeight.normal : null,
                             color: Colors.white.withOpacity(isActive
                                 ? 1
                                 : isNextLeftClose || isNextRightClose

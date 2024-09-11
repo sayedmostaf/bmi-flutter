@@ -1,4 +1,4 @@
-import 'package:bmi/constants.dart';
+import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/data/models/gender.dart';
 import 'package:bmi/view/widgets/gender_selection_tile.dart';
 import 'package:flutter/material.dart';

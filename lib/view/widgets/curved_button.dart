@@ -1,4 +1,4 @@
-import 'package:bmi/constants.dart';
+import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/view/widgets/curve.dart';
 import 'package:flutter/material.dart';
 

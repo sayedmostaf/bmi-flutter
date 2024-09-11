@@ -1,4 +1,5 @@
-import 'package:bmi/constants.dart';
+import 'package:bmi/view/theme/colors.dart';
+import 'package:bmi/view/theme/typography.dart';
 import 'package:flutter/material.dart';
 
 class AgeIndicator extends StatelessWidget {
@@ -9,7 +10,7 @@ class AgeIndicator extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 60,
+          height: 64,
           width: 55,
           // alignment: Alignment.topCenter,
           padding: const EdgeInsets.all(5),
@@ -26,7 +27,7 @@ class AgeIndicator extends StatelessWidget {
               ),
               Text(
                 '$age',
-                style: const TextStyle(color: Colors.white, fontSize: 25),
+                style: CustomTypography.labelLarge,
               ),
             ],
           ),
@@ -34,14 +35,10 @@ class AgeIndicator extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        const Text(
+        Text(
           'Age',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.normal,
-            fontSize: 16,
-          ),
-        )
+          style: CustomTypography.labelNormal,
+        ),
       ],
     );
   }

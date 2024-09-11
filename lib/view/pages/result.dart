@@ -1,4 +1,4 @@
-import 'package:bmi/constants.dart';
+import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/view/pages/home.dart';
 import 'package:bmi/view/widgets/composition_tile.dart';
 import 'package:bmi/view/widgets/curved_button.dart';
@@ -53,9 +53,19 @@ class _ResultPageState extends State<ResultPage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const CircleAvatar(
-                radius: 130,
-                backgroundColor: primary,
+              Container(
+                height: 240,
+                width: 240,
+                decoration: decoratedBoxGradient,
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('BMI'),
+                    Text('24.4'),
+                    Text('Normal'),
+                  ],
+                ),
               ),
               Text(
                 'Body Composition ',
@@ -82,7 +92,7 @@ class _ResultPageState extends State<ResultPage> {
                 children: [
                   CompositionTile(
                     value: 173.toString(),
-                    title: "Height",
+                    title: "centimeter",
                   ),
                   CompositionTile(
                     value: 82.toString(),

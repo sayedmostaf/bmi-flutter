@@ -1,5 +1,6 @@
-import 'package:bmi/constants.dart';
+import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/data/models/gender.dart';
+import 'package:bmi/view/theme/typography.dart';
 import 'package:bmi/view/widgets/curve.dart';
 import 'package:flutter/material.dart';
 
@@ -62,11 +63,9 @@ class GenderSelectionTile extends StatelessWidget {
           ),
           Text(
             gender.gender!,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: isSelected! ? FontWeight.bold : FontWeight.normal,
-              fontSize: 16,
-            ),
+            style: isSelected!
+                ? CustomTypography.labelNormalBold
+                : CustomTypography.labelNormal,
           )
         ],
       ),
