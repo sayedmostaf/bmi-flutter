@@ -1,5 +1,6 @@
 import 'package:bmi/constants.dart';
 import 'package:bmi/view/pages/home.dart';
+import 'package:bmi/view/widgets/composition_tile.dart';
 import 'package:bmi/view/widgets/curved_button.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class _ResultPageState extends State<ResultPage> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: swatch,
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -37,6 +39,7 @@ class _ResultPageState extends State<ResultPage> {
         ),
         actions: [
           IconButton(
+            color: Colors.white,
             onPressed: () {},
             icon: const Icon(Icons.help),
             tooltip: 'Get Help',
@@ -54,20 +57,11 @@ class _ResultPageState extends State<ResultPage> {
                 radius: 130,
                 backgroundColor: primary,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 150,
-                    height: 120,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    width: 150,
-                    height: 120,
-                    color: Colors.red,
-                  ),
-                ],
+              Text(
+                'Body Composition ',
+                style: TextStyle(
+                  color: Colors.white.withOpacity(.5),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -75,12 +69,24 @@ class _ResultPageState extends State<ResultPage> {
                   Container(
                     width: 150,
                     height: 120,
-                    color: Colors.red,
+                    color: darkBlue,
                   ),
-                  Container(
-                    width: 150,
-                    height: 120,
-                    color: Colors.red,
+                  CompositionTile(
+                    value: 19.toString(),
+                    title: "Age",
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CompositionTile(
+                    value: 173.toString(),
+                    title: "Height",
+                  ),
+                  CompositionTile(
+                    value: 82.toString(),
+                    title: "Kg",
                   ),
                 ],
               ),
