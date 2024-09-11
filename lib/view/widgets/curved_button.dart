@@ -3,8 +3,14 @@ import 'package:bmi/view/widgets/curve.dart';
 import 'package:flutter/material.dart';
 
 class CurvedButton extends StatelessWidget {
-  const CurvedButton({super.key, this.onPressed});
+  const CurvedButton(
+      {super.key,
+      this.onPressed,
+      this.text = "Next",
+      this.icon = Icons.arrow_forward});
   final VoidCallback? onPressed;
+  final String? text;
+  final IconData? icon;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,16 +25,16 @@ class CurvedButton extends StatelessWidget {
           alignment: Alignment.center,
           height: 46,
           width: 75,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Next',
-                style: TextStyle(color: Colors.white),
+                text!,
+                style: const TextStyle(color: Colors.white),
               ),
               Icon(
-                Icons.arrow_forward,
+                icon!,
                 color: Colors.white,
               ),
             ],

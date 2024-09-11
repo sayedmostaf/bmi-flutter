@@ -7,8 +7,7 @@ import 'package:bmi/view/widgets/weight_picker.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
-  final String title;
+  const HomePage({super.key});
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -20,9 +19,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: swatch,
         toolbarHeight: 80,
-        title: Text(
-          widget.title,
-          style: const TextStyle(color: Colors.white),
+        title: const Text(
+          'BMI Calculator',
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: SafeArea(

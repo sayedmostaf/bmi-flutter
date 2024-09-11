@@ -143,7 +143,18 @@ class _HeightPageState extends State<HeightPage> {
                   ),
                 ],
               ),
-              const CurvedButton()
+              CurvedButton(
+                onPressed: () {
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const ResultPage();
+                      },
+                    ),
+                    ((route) => false),
+                  );
+                },
+              )
             ],
           ),
         ),

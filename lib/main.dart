@@ -36,9 +36,7 @@ class BMI extends StatelessWidget {
           ),
         ),
       ),
-      home: const HomePage(
-        title: 'BMI Calculator',
-      ),
+      home: const HomePage(),
     );
   }
 }
