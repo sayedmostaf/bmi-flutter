@@ -1,4 +1,5 @@
 import 'package:bmi/constants.dart';
+import 'package:bmi/view/pages/result.dart';
 import 'package:bmi/view/widgets/curved_button.dart';
 import 'package:flutter/material.dart';
 
