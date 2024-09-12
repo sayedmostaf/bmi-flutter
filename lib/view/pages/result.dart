@@ -1,8 +1,11 @@
+import 'package:bmi/controller/data_input_controller.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/view/pages/home.dart';
+import 'package:bmi/view/theme/typography.dart';
 import 'package:bmi/view/widgets/composition_tile.dart';
 import 'package:bmi/view/widgets/curved_button.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ResultPage extends StatefulWidget {
   const ResultPage({super.key});
@@ -57,13 +60,25 @@ class _ResultPageState extends State<ResultPage> {
                 height: 240,
                 width: 240,
                 decoration: decoratedBoxGradient,
-                child: const Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('BMI'),
-                    Text('24.4'),
-                    Text('Normal'),
+                    Text(
+                      'BMI',
+                      style: CustomTypography.titleMedium,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      '24.4',
+                      style: CustomTypography.bodyLarge,
+                    ),
+                    Text(
+                      'Normal',
+                      style: CustomTypography.bodyMedium,
+                    ),
                   ],
                 ),
               ),
@@ -92,7 +107,7 @@ class _ResultPageState extends State<ResultPage> {
                 children: [
                   CompositionTile(
                     value: 173.toString(),
-                    title: "centimeter",
+                    title: "Centimeter",
                   ),
                   CompositionTile(
                     value: 82.toString(),
@@ -104,6 +119,8 @@ class _ResultPageState extends State<ResultPage> {
                 text: 'Retry',
                 icon: Icons.restore,
                 onPressed: () {
+                  Provider.of<DataProvider>(context, listen: false)
+                      .resetValues();
                   Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(builder: (context) {
                     return const HomePage();

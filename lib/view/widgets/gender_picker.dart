@@ -1,7 +1,9 @@
+import 'package:bmi/controller/data_input_controller.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/data/models/gender.dart';
 import 'package:bmi/view/widgets/gender_selection_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class GenderPicker extends StatefulWidget {
   const GenderPicker({super.key});
@@ -33,12 +35,18 @@ class _GenderPickerState extends State<GenderPicker> {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           int current = index;
+          int old = selected;
           return GenderSelectionTile(
               gender: genders[index],
               isSelected: current == selected,
               onPressed: () {
                 setState(() {
-                  selected = index;
+                  selected = current;
+                  if (old != current) {
+                    Provider.of<DataProvider>(context, listen: false)
+                        .selectGender();
+                  }
+                  old = current;
                 });
               });
         },
