@@ -1,5 +1,7 @@
+import 'package:bmi/providers/person_provider.dart';
 import 'package:bmi/view/widgets/pentagon.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../theme/colors.dart';
 
@@ -25,9 +27,15 @@ class _WeightPickerState extends State<WeightPicker> {
         int position = weightPickerController.page!.round();
         if (position != _selectedWeight) {
           _selectedWeight = position;
+          trackAndSetWeight(context);
         }
       });
     });
+  }
+
+  void trackAndSetWeight(BuildContext context) {
+    Provider.of<PersonProvider>(context, listen: false)
+        .setPersonWeight(_selectedWeight);
   }
 
   @override
@@ -74,7 +82,7 @@ class _WeightPickerState extends State<WeightPicker> {
                     bool isNextRightClose = index - _selectedWeight == 1;
                     bool isNextNextLeftClose = index - _selectedWeight == -2;
                     bool isNextNextRightClose = index - _selectedWeight == 2;
-                    var text = Text("${index + 1}");
+                    var text = Text("$index");
                     return Align(
                       alignment: Alignment.center,
                       child: Text(
@@ -109,7 +117,7 @@ class _WeightPickerState extends State<WeightPicker> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "${_selectedWeight + 1}",
+                      "$_selectedWeight",
                       style: const TextStyle(
                           color: primary,
                           fontSize: 40,

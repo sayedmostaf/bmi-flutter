@@ -1,5 +1,7 @@
+import 'package:bmi/providers/person_provider.dart';
 import 'package:bmi/view/widgets/age_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AgePicker extends StatefulWidget {
   const AgePicker({super.key});
@@ -21,9 +23,15 @@ class _AgePickerState extends State<AgePicker> {
         int position = agePickerController.page!.round();
         if (position != _selectedAge) {
           _selectedAge = position;
+          trackAndSetPersonAge(context);
         }
       });
     });
+  }
+
+  void trackAndSetPersonAge(BuildContext context) {
+    Provider.of<PersonProvider>(context, listen: false)
+        .setPersonAge(_selectedAge);
   }
 
   @override
@@ -44,11 +52,12 @@ class _AgePickerState extends State<AgePicker> {
         bool isNextRightClose = index - _selectedAge == 1;
         bool isNextNextLeftClose = index - _selectedAge == -2;
         bool isNextNextRightClose = index - _selectedAge == 2;
-        var text = Text("${index + 1}");
+        var text = Text("$index");
+
         return Align(
           alignment: Alignment.center,
           child: isActive
-              ? AgeIndicator(age: index + 1)
+              ? AgeIndicator(age: index)
               : Text(
                   '${text.data}',
                   style: TextStyle(

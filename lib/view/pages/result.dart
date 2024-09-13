@@ -1,4 +1,4 @@
-import 'package:bmi/controller/data_input_controller.dart';
+import 'package:bmi/providers/person_provider.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/view/pages/home.dart';
 import 'package:bmi/view/theme/typography.dart';
@@ -18,6 +18,7 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    var person = Provider.of<PersonProvider>(context, listen: true).getPerson;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: swatch,
@@ -72,7 +73,7 @@ class _ResultPageState extends State<ResultPage> {
                       height: 15,
                     ),
                     Text(
-                      '24.4',
+                      '${person.bodyMassIndex}',
                       style: CustomTypography.bodyLarge,
                     ),
                     Text(
@@ -97,7 +98,7 @@ class _ResultPageState extends State<ResultPage> {
                     color: darkBlue,
                   ),
                   CompositionTile(
-                    value: 19.toString(),
+                    value: person.age.toString(),
                     title: "Age",
                   ),
                 ],
@@ -106,11 +107,11 @@ class _ResultPageState extends State<ResultPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CompositionTile(
-                    value: 173.toString(),
+                    value: person.height.toString(),
                     title: "Centimeter",
                   ),
                   CompositionTile(
-                    value: 82.toString(),
+                    value: person.weight.toString(),
                     title: "Kg",
                   ),
                 ],
@@ -119,7 +120,7 @@ class _ResultPageState extends State<ResultPage> {
                 text: 'Retry',
                 icon: Icons.restore,
                 onPressed: () {
-                  Provider.of<DataProvider>(context, listen: false)
+                  Provider.of<PersonProvider>(context, listen: false)
                       .resetValues();
                   Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(builder: (context) {

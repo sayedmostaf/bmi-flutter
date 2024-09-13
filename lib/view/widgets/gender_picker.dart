@@ -1,4 +1,4 @@
-import 'package:bmi/controller/data_input_controller.dart';
+import 'package:bmi/providers/person_provider.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/data/models/gender.dart';
 import 'package:bmi/view/widgets/gender_selection_tile.dart';
@@ -43,7 +43,7 @@ class _GenderPickerState extends State<GenderPicker> {
                 setState(() {
                   selected = current;
                   if (old != current) {
-                    Provider.of<DataProvider>(context, listen: false)
+                    Provider.of<PersonProvider>(context, listen: false)
                         .selectGender();
                   }
                   old = current;
