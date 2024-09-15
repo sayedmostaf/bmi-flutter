@@ -20,7 +20,7 @@ double value = (maxValue - valueGap) / 2;
 class _HeightPageState extends State<HeightPage> {
   late var heightController = PageController();
 
-  int _currentCentimeter = 145;
+  int _currentCentimeter = 173;
   late double _selectedheight = 160;
 
   int _currentPage = (maxValue ~/ valueGap / 2).floor();
@@ -37,7 +37,8 @@ class _HeightPageState extends State<HeightPage> {
 
         if (position != _currentCentimeter) {
           _currentCentimeter = position;
-          _selectedheight = ((_currentCentimeter * 2.94) * maxValue) / 529.2;
+          _selectedheight =
+              ((_currentCentimeter.toInt() * 2.935) * maxValue) / 529.2;
         }
       });
     });
@@ -45,7 +46,7 @@ class _HeightPageState extends State<HeightPage> {
 
   void trackAndSetHeight(BuildContext context) {
     Provider.of<PersonProvider>(context, listen: false)
-        .setPersonHeight(_selectedheight.toInt());
+        .setPersonHeight(_selectedheight.round());
   }
 
   @override
@@ -127,7 +128,7 @@ class _HeightPageState extends State<HeightPage> {
                         itemBuilder: (context, index) {
                           int current = index + 1;
                           bool selectedCentimeter =
-                              _selectedheight.toInt() == current - 1;
+                              _selectedheight.round() == current;
                           // print("${_currentPage + 6}");
                           return Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -162,6 +163,8 @@ class _HeightPageState extends State<HeightPage> {
               ),
               CurvedButton(
                 onPressed: () {
+                  Provider.of<PersonProvider>(context, listen: false)
+                      .calculatePersonBodyMassIndex();
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
                       builder: (context) {

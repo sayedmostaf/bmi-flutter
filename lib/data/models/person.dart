@@ -6,11 +6,11 @@ class Person {
   String? gender;
   double? bodyMassIndex;
 
-  Person(
-      {this.age = 19,
-      this.bodyMassIndex = 0,
-      this.height = 170,
-      this.name,
-      this.weight = 82,
-      this.gender});
+  Person() {
+    age = 19;
+    bodyMassIndex = 0;
+    height = 173;
+    weight = 82;
+    gender = "Male";
+  }
 }

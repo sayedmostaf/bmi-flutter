@@ -73,11 +73,11 @@ class _ResultPageState extends State<ResultPage> {
                       height: 15,
                     ),
                     Text(
-                      '${person.bodyMassIndex}',
+                      person.bodyMassIndex!.toStringAsFixed(2),
                       style: CustomTypography.bodyLarge,
                     ),
                     Text(
-                      'Normal',
+                      context.read<PersonProvider>().getStatus(),
                       style: CustomTypography.bodyMedium,
                     ),
                   ],
@@ -96,6 +96,9 @@ class _ResultPageState extends State<ResultPage> {
                     width: 150,
                     height: 120,
                     color: darkBlue,
+                    child: Image.asset(person.gender == 'Male'
+                        ? 'assets/normal_man.png'
+                        : 'assets/normal_girl.png'),
                   ),
                   CompositionTile(
                     value: person.age.toString(),
