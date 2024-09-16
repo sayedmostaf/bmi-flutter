@@ -1,6 +1,7 @@
 import 'package:bmi/data/local/objectbox.g.dart';
 import 'package:bmi/data/models/person.dart';
 import 'package:path_provider/path_provider.dart';
+// ignore: depend_on_referenced_packages
 import 'package:path/path.dart' as p;
 
 class ObjectBox {

@@ -23,7 +23,6 @@ class _HeightPageState extends State<HeightPage> {
   int _currentCentimeter = 173;
   late double _selectedheight = 160;
 
-  int _currentPage = (maxValue ~/ valueGap / 2).floor();
   @override
   void initState() {
     super.initState();
@@ -164,7 +163,7 @@ class _HeightPageState extends State<HeightPage> {
               CurvedButton(
                 onPressed: () {
                   Provider.of<PersonProvider>(context, listen: false)
-                      .calculatePersonBodyMassIndex();
+                      .getPersonBodyMassIndex();
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
                       builder: (context) {

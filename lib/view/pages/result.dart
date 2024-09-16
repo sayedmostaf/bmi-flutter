@@ -1,3 +1,4 @@
+import 'package:bmi/functions.dart';
 import 'package:bmi/main.dart';
 import 'package:bmi/providers/person_provider.dart';
 import 'package:bmi/view/theme/colors.dart';
@@ -128,7 +129,7 @@ class _ResultPageState extends State<ResultPage> {
                         style: CustomTypography.bodyLarge,
                       ),
                       Text(
-                        context.read<PersonProvider>().getStatus(),
+                        getStatus(person.bodyMassIndex!),
                         style: CustomTypography.bodyMedium,
                       ),
                     ],

@@ -52,7 +52,7 @@ class _RecordPageState extends State<RecordPage> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    // var size = MediaQuery.of(context).size;
     var streamPerson = localStorage.getRecords();
     return Scaffold(
       appBar: AppBar(
@@ -85,7 +85,7 @@ class _RecordPageState extends State<RecordPage> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: StreamBuilder(
             stream: streamPerson,
             builder: ((context, snapshot) {
