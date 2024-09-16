@@ -1,6 +1,7 @@
 import 'package:bmi/providers/person_provider.dart';
 import 'package:bmi/view/widgets/pentagon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../theme/colors.dart';
@@ -54,8 +55,8 @@ class _WeightPickerState extends State<WeightPicker> {
         borderRadius: BorderRadius.circular(10),
         clipBehavior: Clip.hardEdge,
         child: Container(
-          height: size.height * .35,
-          width: size.width * .8,
+          height: size.height * .4,
+          width: size.width * .9,
           padding: const EdgeInsets.all(12),
           alignment: Alignment.topCenter,
           decoration: BoxDecoration(
@@ -115,9 +116,11 @@ class _WeightPickerState extends State<WeightPicker> {
                 backgroundColor: Colors.white,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "$_selectedWeight",
+                      textAlign: TextAlign.center,
                       style: const TextStyle(
                           color: primary,
                           fontSize: 40,
@@ -125,6 +128,7 @@ class _WeightPickerState extends State<WeightPicker> {
                     ),
                     const Text(
                       "Kg",
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         color: primary,
                         fontSize: 18,

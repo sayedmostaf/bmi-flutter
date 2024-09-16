@@ -28,7 +28,8 @@ class _GenderPickerState extends State<GenderPicker> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Flexible(
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * .22,
       child: ListView.separated(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
