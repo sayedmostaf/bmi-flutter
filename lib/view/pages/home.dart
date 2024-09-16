@@ -1,3 +1,4 @@
+import 'package:bmi/view/pages/records.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/view/pages/height.dart';
 import 'package:bmi/view/widgets/age_picker.dart';
@@ -23,6 +24,16 @@ class _HomePageState extends State<HomePage> {
           'BMI Calculator',
           style: TextStyle(color: Colors.white),
         ),
+        actions: [
+          IconButton(
+            onPressed: (() {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const RecordPage();
+              }));
+            }),
+            icon: const Icon(Icons.history),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Column(

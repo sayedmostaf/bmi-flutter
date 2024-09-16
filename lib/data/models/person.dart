@@ -1,10 +1,16 @@
+import 'package:bmi/data/local/objectbox.g.dart';
+
 class Person {
+  int id = 0;
   int? height;
   int? age;
   int? weight;
   String? name;
   String? gender;
   double? bodyMassIndex;
+
+  @Property(type: PropertyType.date)
+  DateTime? dataCreated;
 
   Person() {
     age = 19;
@@ -13,4 +19,6 @@ class Person {
     weight = 82;
     gender = "Male";
   }
+
+  // set dataCreated(DateTime? dataCreated) {}
 }

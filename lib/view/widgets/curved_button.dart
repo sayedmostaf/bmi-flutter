@@ -7,10 +7,12 @@ class CurvedButton extends StatelessWidget {
       {super.key,
       this.onPressed,
       this.text = "Next",
+      this.color = primary,
       this.icon = Icons.arrow_forward});
   final VoidCallback? onPressed;
   final String? text;
   final IconData? icon;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +21,7 @@ class CurvedButton extends StatelessWidget {
         clipper: CustomCurvePath(),
         child: Container(
           decoration: BoxDecoration(
-            color: primary,
+            color: color,
             borderRadius: BorderRadius.circular(8),
           ),
           alignment: Alignment.center,

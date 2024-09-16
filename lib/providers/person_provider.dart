@@ -47,5 +47,9 @@ class PersonProvider extends ChangeNotifier {
     }
   }
 
+  void setPersonName(String name) {
+    _person.name = name;
+  }
+
   Person get getPerson => _person;
 }
