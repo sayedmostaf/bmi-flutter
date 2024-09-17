@@ -5,6 +5,7 @@ class Person {
   int? height;
   int? age;
   int? weight;
+  String? status;
   String? name;
   String? gender;
   double? bodyMassIndex;
@@ -18,6 +19,7 @@ class Person {
     height = 173;
     weight = 82;
     gender = "Male";
+    dataCreated = DateTime.now();
   }
 
   // set dataCreated(DateTime? dataCreated) {}

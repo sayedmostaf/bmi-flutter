@@ -2,6 +2,7 @@ import 'package:bmi/data/models/person.dart';
 import 'package:bmi/main.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/view/theme/typography.dart';
+import 'package:bmi/view/widgets/record_bmi_tile.dart';
 import 'package:flutter/material.dart';
 
 class RecordPage extends StatefulWidget {
@@ -122,30 +123,7 @@ class _RecordPageState extends State<RecordPage> {
                     : ListView.builder(
                         itemCount: records.length,
                         itemBuilder: (context, index) {
-                          return ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor: primary,
-                              radius: 45,
-                              child: Icon(
-                                records[index].gender == 'Male'
-                                    ? Icons.boy
-                                    : Icons.girl,
-                                color: Colors.white,
-                                size: 40,
-                              ),
-                            ),
-                            title: Text(
-                              '${records[index].name}',
-                              style: CustomTypography.bodyMedium,
-                            ),
-                            subtitle: Text(
-                              '${records[index].age} year-old',
-                              style: TextStyle(
-                                  color: Colors.white.withOpacity(.5),
-                                  fontSize: 16),
-                            ),
-                            onTap: () => showRecordDetails(records[index]),
-                          );
+                          return SavedBmiTile(record: records[index]);
                         });
               }),
             )),

@@ -1,4 +1,5 @@
 import 'package:bmi/data/models/person.dart';
+import 'package:intl/intl.dart';
 
 double calculatePersonBodyMassIndex(Person person) {
   double height = person.height! / 100;
@@ -16,5 +17,11 @@ String getStatus(double bmi) {
     return 'Overweight';
   } else {
     return 'Obese';
+  }
+}
+
+extension DateTimeFormatted on DateTime {
+  String format() {
+    return DateFormat(DateFormat.YEAR_ABBR_MONTH_WEEKDAY_DAY).format(this);
   }
 }
