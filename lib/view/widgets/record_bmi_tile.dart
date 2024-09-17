@@ -48,7 +48,7 @@ class SavedBmiTile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${record.name!} | ${record.age} on ',
+                  '${record.name!} | ${record.age} on ${record.dataCreated!.format()}',
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.normal,
