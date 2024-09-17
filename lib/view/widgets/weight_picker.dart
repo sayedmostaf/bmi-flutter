@@ -1,7 +1,6 @@
 import 'package:bmi/providers/person_provider.dart';
 import 'package:bmi/view/widgets/pentagon.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../theme/colors.dart';
@@ -99,13 +98,13 @@ class _WeightPickerState extends State<WeightPicker> {
                                         ? .5
                                         : .3),
                             fontSize: isActive
-                                ? 31
+                                ? 36
                                 : isNextLeftClose || isNextRightClose
-                                    ? 22
+                                    ? 25
                                     : isNextNextLeftClose ||
                                             isNextNextRightClose
-                                        ? 16
-                                        : 14),
+                                        ? 18
+                                        : 16),
                       ),
                     );
                   },
