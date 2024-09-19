@@ -3,7 +3,6 @@ import 'package:bmi/utils/navigation_helper.dart';
 import 'package:bmi/view/pages/height/widgets/height_view_app_bar.dart';
 import 'package:bmi/view/pages/height/widgets/height_view_ruler_indicator.dart';
 import 'package:bmi/view/pages/result/result_page.dart';
-import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/view/widgets/curved_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
