@@ -1,7 +1,7 @@
 import 'package:bmi/providers/person_provider.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/data/models/gender.dart';
-import 'package:bmi/view/widgets/gender_selection_tile.dart';
+import 'package:bmi/view/pages/home/widgets/home_view_gender_selection_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

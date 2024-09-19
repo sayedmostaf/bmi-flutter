@@ -1,5 +1,5 @@
 import 'package:bmi/providers/person_provider.dart';
-import 'package:bmi/view/widgets/age_indicator.dart';
+import 'package:bmi/view/pages/home/widgets/home_view_age_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

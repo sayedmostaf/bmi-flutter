@@ -1,8 +1,10 @@
 import 'package:bmi/providers/person_provider.dart';
-import 'package:bmi/view/pages/result.dart';
+import 'package:bmi/utils/navigation_helper.dart';
+import 'package:bmi/view/pages/height/widgets/height_view_app_bar.dart';
+import 'package:bmi/view/pages/height/widgets/height_view_ruler_indicator.dart';
+import 'package:bmi/view/pages/result/result_page.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:bmi/view/widgets/curved_button.dart';
-import 'package:bmi/view/widgets/ruler_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -60,23 +62,7 @@ class _HeightPageState extends State<HeightPage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: Colors.white),
-          backgroundColor: swatch,
-          centerTitle: true,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Select Your ",
-                style: TextStyle(color: Colors.white.withOpacity(.5)),
-              ),
-              const Text("Height",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.normal)),
-            ],
-          ),
-        ),
+        appBar: const HeightViewAppBar(title: 'Height'),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(12),
@@ -100,8 +86,8 @@ class _HeightPageState extends State<HeightPage> {
                             child: Image.asset(
                               Provider.of<PersonProvider>(context)
                                       .isMaleSelected
-                                  ? "assets/man_standing.png"
-                                  : "assets/girl_standing.png",
+                                  ? "assets/images/man_standing.png"
+                                  : "assets/images/girl_standing.png",
                               height: _currentCentimeter * 2.94,
                               fit: BoxFit.fitHeight,
                             ),
@@ -156,11 +142,11 @@ class _HeightPageState extends State<HeightPage> {
                   onPressed: () {
                     Provider.of<PersonProvider>(context, listen: false)
                         .getPersonBodyMassIndex();
-                    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
-                      builder: (context) {
-                        return const ResultPage();
-                      },
-                    ), ((route) => false));
+                    navigateToPageAndRemoveUntil(
+                      context,
+                      const ResultPage(),
+                      false,
+                    );
                   },
                 )
               ],

@@ -42,7 +42,7 @@ class GenderSelectionTile extends StatelessWidget {
                 child: Stack(
                   alignment: AlignmentDirectional.center,
                   children: [
-                    Image.asset('assets/${gender.image}'),
+                    Image.asset('assets/images/${gender.image}'),
                     isSelected!
                         ? const Positioned(
                             top: 5,

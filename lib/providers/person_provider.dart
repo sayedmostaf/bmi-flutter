@@ -1,5 +1,6 @@
 import 'package:bmi/data/models/person.dart';
-import 'package:bmi/functions.dart';
+import 'package:bmi/utils/functions/calculate_person_bmi.dart';
+import 'package:bmi/utils/functions/get_status_bmi.dart';
 import 'package:flutter/material.dart';
 
 class PersonProvider extends ChangeNotifier {

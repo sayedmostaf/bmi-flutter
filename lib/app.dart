@@ -1,4 +1,4 @@
-import 'package:bmi/view/pages/home.dart';
+import 'package:bmi/view/pages/home/home_page.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

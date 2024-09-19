@@ -3,7 +3,7 @@ import 'package:bmi/view/widgets/pentagon.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../theme/colors.dart';
+import '../../../theme/colors.dart';
 
 class WeightPicker extends StatefulWidget {
   const WeightPicker({super.key});
@@ -67,8 +67,9 @@ class _WeightPickerState extends State<WeightPicker> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Icon(
-                Icons.arrow_drop_down,
+                Icons.keyboard_double_arrow_down_rounded,
                 color: Colors.white,
+                size: 30,
               ),
               SizedBox(
                 height: 80,
@@ -88,6 +89,7 @@ class _WeightPickerState extends State<WeightPicker> {
                       child: Text(
                         "${text.data}",
                         style: TextStyle(
+                            height: 2,
                             fontWeight: isActive ? FontWeight.normal : null,
                             color: Colors.white.withOpacity(isActive
                                 ? 1

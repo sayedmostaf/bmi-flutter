@@ -22,5 +22,4 @@ class Person {
     dataCreated = DateTime.now();
   }
 
-  // set dataCreated(DateTime? dataCreated) {}
 }

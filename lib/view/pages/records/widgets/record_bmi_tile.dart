@@ -1,5 +1,6 @@
 import 'package:bmi/data/models/person.dart';
-import 'package:bmi/functions.dart';
+import 'package:bmi/utils/functions/get_status_bmi.dart';
+import 'package:bmi/utils/functions/time_fromat.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +41,7 @@ class SavedBmiTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  getStatus(record.bodyMassIndex!),
+                  record.name!,
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -48,7 +49,7 @@ class SavedBmiTile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${record.name!} | ${record.age} on ${record.dataCreated!.format()}',
+                  '${getStatus(record.bodyMassIndex!)} | ${record.age} on ${record.dataCreated!.format()}',
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.normal,
