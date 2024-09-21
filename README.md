@@ -15,6 +15,7 @@ This screen shows the input for height when selecting male.
 <img src="./screenshots/male_height.jpeg" width="250" height="550">
 
 ### 3. Female Height Input
+
 This screen shows the input for height when selecting female.
 <img src="./screenshots/female_hight.jpeg" width="250" height="550">
 
