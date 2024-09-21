@@ -6,10 +6,12 @@ This is a BMI calculator app built using Flutter. It allows users to calculate t
 
 ### 1. Home Screen
 The home screen allows users to input their height and weight.
+
 <img src="./screenshots/home.jpeg" width="250" height="550">
 
 ### 2. Male Height Input
 This screen shows the input for height when selecting male.
+
 <img src="./screenshots/male_height.jpeg" width="250" height="550">
 
 ### 3. Female Height Input
@@ -18,18 +20,22 @@ This screen shows the input for height when selecting female.
 
 ### 4. No Records Screen
 Displayed when no records are available.
+
 <img src="./screenshots/no_records.jpeg" width="250" height="550">
 
 ### 5. Records Screen
 Displays the saved BMI calculation records.
+
 <img src="./screenshots/records.jpeg" width="250" height="550">
 
 ### 6. BMI Result Screen
 Shows the calculated BMI result after inputting data.
+
 <img src="./screenshots/result.jpeg" width="250" height="550">
 
 ### 7. Save Record Dialog
 Users can save their BMI result with a custom name.
+
 <img src="./screenshots/save_dialog.jpeg" width="250" height="550">
 
 ## Features
