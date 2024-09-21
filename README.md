@@ -1,16 +1,44 @@
-# bmi
+# BMI Flutter App
 
-A new Flutter project.
+This is a BMI calculator app built using Flutter. It allows users to calculate their BMI based on their height and weight, save the result, and view previous records.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+### 1. Home Screen
+The home screen allows users to input their height and weight.
+![Home Screen](./screenshots/home.jpeg)
 
-A few resources to get you started if this is your first Flutter project:
+### 2. Male Height Input
+This screen shows the input for height when selecting male.
+![Male Height](./screenshots/male_height.jpeg)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 3. Female Height Input
+This screen shows the input for height when selecting female.
+![Female Height](./screenshots/female_hight.jpeg)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 4. No Records Screen
+Displayed when no records are available.
+![No Records](./screenshots/no_records.jpeg)
+
+### 5. Records Screen
+Displays the saved BMI calculation records.
+![Records](./screenshots/records.jpeg)
+
+### 6. BMI Result Screen
+Shows the calculated BMI result after inputting data.
+![Result](./screenshots/result.jpeg)
+
+### 7. Save Record Dialog
+Users can save their BMI result with a custom name.
+![Save Dialog](./screenshots/save_dialog.jpeg)
+
+## Features
+- Calculate BMI based on height and weight.
+- Switch between male and female inputs.
+- Save BMI records.
+- View saved BMI records.
+
+## How to Run the App
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/bmi-flutter.git
