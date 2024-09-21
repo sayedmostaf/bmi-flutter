@@ -10,27 +10,27 @@ The home screen allows users to input their height and weight.
 
 ### 2. Male Height Input
 This screen shows the input for height when selecting male.
-![Male Height](./screenshots/male_height.jpeg)
+<img src="./screenshots/male_height.jpeg" width="250" height="550">
 
 ### 3. Female Height Input
 This screen shows the input for height when selecting female.
-![Female Height](./screenshots/female_hight.jpeg)
+<img src="./screenshots/female_height.jpeg" width="250" height="550">
 
 ### 4. No Records Screen
 Displayed when no records are available.
-![No Records](./screenshots/no_records.jpeg)
+<img src="./screenshots/no_records.jpeg" width="250" height="550">
 
 ### 5. Records Screen
 Displays the saved BMI calculation records.
-![Records](./screenshots/records.jpeg)
+<img src="./screenshots/records.jpeg" width="250" height="550">
 
 ### 6. BMI Result Screen
 Shows the calculated BMI result after inputting data.
-![Result](./screenshots/result.jpeg)
+<img src="./screenshots/result.jpeg" width="250" height="550">
 
 ### 7. Save Record Dialog
 Users can save their BMI result with a custom name.
-![Save Dialog](./screenshots/save_dialog.jpeg)
+<img src="./screenshots/save_dialog.jpeg" width="250" height="550">
 
 ## Features
 - Calculate BMI based on height and weight.
