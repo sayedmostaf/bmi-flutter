@@ -18,14 +18,17 @@ class ActionButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        RetryButton(provider: provider),
-        SizedBox(width: size.width * .05),
-        SaveButton(provider: provider, person: person),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          RetryButton(provider: provider),
+          SizedBox(width: size.width * .05),
+          SaveButton(provider: provider, person: person),
+        ],
+      ),
     );
   }
 }

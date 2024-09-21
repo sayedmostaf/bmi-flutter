@@ -17,6 +17,7 @@ class ResultPage extends StatelessWidget {
     var person = provider.getPerson;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: NestedScrollView(
         physics: const BouncingScrollPhysics(),
         floatHeaderSlivers: true,

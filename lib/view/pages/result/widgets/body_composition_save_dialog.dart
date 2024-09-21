@@ -5,7 +5,6 @@ import 'package:bmi/utils/navigation_helper.dart';
 import 'package:bmi/view/pages/home/home_page.dart';
 import 'package:bmi/view/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SaveDialog extends StatelessWidget {
   final PersonProvider provider;
