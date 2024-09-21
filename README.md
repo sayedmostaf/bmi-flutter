@@ -6,7 +6,7 @@ This is a BMI calculator app built using Flutter. It allows users to calculate t
 
 ### 1. Home Screen
 The home screen allows users to input their height and weight.
-<img src="./screenshots/home.jpeg" width="300" height="500">
+<img src="./screenshots/home.jpeg" width="250" height="550">
 
 ### 2. Male Height Input
 This screen shows the input for height when selecting male.
